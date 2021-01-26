@@ -1,0 +1,101 @@
+*{
+    margin-top: 20px;;
+}
+body{
+    background-color: black;
+    color: rgba(255,255,255, 0.9);
+}
+
+h1, h2, h3, h4,h5,h6{
+    font-family: 'Inconsolata', monospace;
+    padding-left: 10px;;
+}
+
+p, a {
+    font-family: 'Cutive Mono', monospace;
+    font-weight: 100;
+    text-align: justify;
+}
+
+li, a{
+    list-style: none;
+    color: rgba(255,255,255, 0.9);
+    font-weight: 600;
+    text-decoration: none;
+    display: inline;
+    margin-left: 10px;
+}
+
+#main{
+    padding: 5px;
+    width:60%;
+    margin: auto;
+    margin-top: 20px;
+    background-color:rgba(255,255,255, 0.3);
+    border-radius: 15px;
+    min-width: 300px;
+}
+
+.codeAndPreview{
+    display: grid;
+    min-width: 300px;
+    grid-template-rows: 0.05fr 1fr 1fr ;
+    grid-template-columns: 1.5fr 1fr;
+    grid-template-areas: 
+    "title title"
+    "texte code"
+    "texte preview";
+    gap: 20px;
+}
+
+pre{
+    margin-left:auto;
+    width: 300px;
+    max-height: 300px;
+    grid-area: code;
+    overflow: scroll;
+    background-color: rgba(0, 0, 0, 0.1);
+    border-radius: 15px;
+    
+}
+
+
+#hello_world{
+    margin-left:auto;
+    width:300px;
+    height: 300px;
+    grid-area: preview;
+}
+
+.codeAndPreview p{
+    border-radius: 10px;
+    padding: 10px;
+    background-color: rgba(0, 0, 0, 0.1);
+    grid-area: texte;
+}
+
+.codeAndPreview h4{
+grid-area: title;
+background-color: rgba(0, 0, 0, 0.1);
+width: 50%;
+border-radius: 0px 15px 15px 0px;
+}
+
+
+
+@media screen and  (max-width: 770px){
+
+    .codeAndPreview{
+        grid-template-rows: 0.01fr 1fr 1fr 1fr;
+        grid-template-columns: 1fr;
+        grid-template-areas:
+        "title"
+        "preview"
+        "code"
+        "texte";
+    }
+
+    pre, .preview{
+        margin: auto;
+    }
+}
