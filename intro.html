@@ -10,19 +10,29 @@
     <title>reglExperiments</title>
 </head>
 <body>
-    <div id="main">
+    <div id="mainIntro">
         <header>
             <h1>REGL EXPERIMENTS</h1>
             <p>Here are some experiments I made during my learning of regl.</p>
             <nav>
                 <ul>
-                    <li><button class="button"><a href="intro.html">intro</a></button></li>
+                    <li><button class="button"><a href="intro.html"><b>intro</b></a></button></li>
                     <li><button class="button"><a href="hello_world.html">hello_world</a></button></li>
                     <li></li>
                     <li></li>
                 </ul>
             </nav>
         </header>
+        <section>
+          <h3 id="intro">what is regl?</h3>
+          <p>regl is a new functional abstraction for webgl.
+          Using regl is easier than writing raw webgl code because you don't need to manage state or binding. it's also lighter and faster and has less overhead than many existing 3d frameworks. and it has a functional data-driven style inspired by react.</p>
+          <h3>examples</h3>
+          <p>here are some live demo made with regl: <br></p>
+          <a href="https://erkaman.github.io/wireframe-world/www/demo.html">terrain</a>
+          <a href="https://rreusser.github.io/demos/smooth-life/">smoothLife</a>
+          <a href="https://tympanus.net/Development/ScrollSpiral/index.html">interactive</a>
+          </section>  
 
         <!-- <section>
             <h3 id="intro">what is regl?</h3>
@@ -96,8 +106,8 @@ regl.frame(({time}) => {
                  </div>
                  
             </div>
-        </section>
-    </div> -->
+        </section> -->
+    </div> 
 </body>
 
 </html>

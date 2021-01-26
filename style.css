@@ -17,13 +17,35 @@ p, a {
     text-align: justify;
 }
 
-li, a{
-    list-style: none;
+li , button{
     color: rgba(255,255,255, 0.9);
     font-weight: 600;
-    text-decoration: none;
     display: inline;
-    margin-left: 10px;
+    border-radius: 3px;
+    background-color: rgba(0,0,0, 0.5);
+    cursor: pointer;
+    border: none;
+}
+
+a{
+    color: white;
+    text-decoration: none;
+}
+
+section a {
+    display: block;
+    padding-left: 50px; 
+    margin-top: 5px;
+}
+
+section a:hover{
+    font-weight: 800;
+}
+
+button:hover{
+    
+        background-color: grey;
+        transition: 0.5s;
 }
 
 #main{
@@ -34,68 +56,43 @@ li, a{
     background-color:rgba(255,255,255, 0.3);
     border-radius: 15px;
     min-width: 300px;
+    height: 200px;
+
 }
 
-.codeAndPreview{
-    display: grid;
-    min-width: 300px;
-    grid-template-rows: 0.05fr 1fr 1fr ;
-    grid-template-columns: 1.5fr 1fr;
-    grid-template-areas: 
-    "title title"
-    "texte code"
-    "texte preview";
-    gap: 20px;
-}
-
-pre{
-    margin-left:auto;
-    width: 300px;
-    max-height: 300px;
-    grid-area: code;
-    overflow: scroll;
-    background-color: rgba(0, 0, 0, 0.1);
+#mainIntro{
+    padding: 5px;
+    width:60%;
+    margin: auto;
+    margin-top: 20px;
+    background-color:rgba(255,255,255, 0.3);
     border-radius: 15px;
-    
+    min-width: 300px;
+    height: 100%;
+}
+
+#mainIntro section{
+    animation-name: fade;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+    opacity: 0;
+}
+
+#mainHello{
+    padding: 5px;
+    width:60%;
+    margin: auto;
+    margin-top: 20px;
+    background-color:rgba(255,255,255, 0.3);
+    border-radius: 15px;
+    min-width: 300px;
+    animation-name: anim;
+    animation-duration: 1s;
+    height: 100%;
 }
 
 
-#hello_world{
-    margin-left:auto;
-    width:300px;
-    height: 300px;
-    grid-area: preview;
-}
-
-.codeAndPreview p{
-    border-radius: 10px;
-    padding: 10px;
-    background-color: rgba(0, 0, 0, 0.1);
-    grid-area: texte;
-}
-
-.codeAndPreview h4{
-grid-area: title;
-background-color: rgba(0, 0, 0, 0.1);
-width: 50%;
-border-radius: 0px 15px 15px 0px;
-}
-
-
-
-@media screen and  (max-width: 770px){
-
-    .codeAndPreview{
-        grid-template-rows: 0.01fr 1fr 1fr 1fr;
-        grid-template-columns: 1fr;
-        grid-template-areas:
-        "title"
-        "preview"
-        "code"
-        "texte";
-    }
-
-    pre, .preview{
-        margin: auto;
-    }
+@keyframes fade{
+    0%{opacity: 0;}
+    100%{opacity: 1;}
 }
