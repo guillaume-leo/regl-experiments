@@ -1,22 +1,29 @@
+// In development, you would probably import/require regl
+// const regl = require('regl')();
+
+// In this block, it is already loaded, so we just
+// initialize it. For more info, see:
+// https://github.com/regl-project/regl#standalone-script-tag
+
 var regl = createREGL(hello_world);
 
 var drawTriangle = regl({
 
   // fragment shader
   frag: `
-precision mediump float;
-uniform vec4 color;
-void main () {
-gl_FragColor = color;
-}`,
+  precision mediump float;
+  uniform vec4 color;
+  void main () {
+    gl_FragColor = color;
+  }`,
 
   // vertex shader
   vert: `
-precision mediump float;
-attribute vec2 position;
-void main () {
-gl_Position = vec4(position, 0, 1);
-}`,
+  precision mediump float;
+  attribute vec2 position;
+  void main () {
+    gl_Position = vec4(position, 0, 1);
+  }`,
 
   // attributes
   attributes: {
@@ -32,20 +39,8 @@ gl_Position = vec4(position, 0, 1);
     color: [1, 0, 0, 1]
   },
 
-  
-
   // vertex count
   count: 3
 })
 
-// regl.frame() wraps requestAnimationFrame and also handles viewport changes
-regl.frame(({time}) => {
-    // clear contents of the drawing buffer
-    regl.clear({
-      color: [0, 0, 0, 0.4],
-      depth: 1
-    })
-  
-    // draw a triangle using the command defined above
-    drawTriangle()
-  })
+drawTriangle();

@@ -23,40 +23,34 @@
                 </ul>
             </nav>
         </header>
+        <section>
+          <pre>
+// In development, you would probably import/require regl
+// const regl = require('regl')();
 
-        <!-- <section>
-            <h3 id="intro">what is regl?</h3>
-            <p>regl is a new functional abstraction for webgl.
-            Using regl is easier than writing raw webgl code because you don't need to manage state or binding. it's also lighter and faster and has less overhead than many existing 3d frameworks. and it has a functional data-driven style inspired by react.</p>
-            <h3>examples</h3>
-            <p>here are some live demo made with regl: <br></p>
-            <a href="https://erkaman.github.io/wireframe-world/www/demo.html">terrain</a>
-            <a href="https://rreusser.github.io/demos/smooth-life/">smoothLife</a>
-            <a href="https://tympanus.net/Development/ScrollSpiral/index.html">interactive</a>
-            <div class="codeAndPreview">
-                <h4 class="title">hello_world</h4>
-                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Rerum enim itaque nam atque eos deleniti nulla omnis, velit fugit porro, hic reprehenderit tempora placeat, sint molestias nobis rem nostrum natus!</p>
-                <pre >
-                 
+// In this block, it is already loaded, so we just
+// initialize it. For more info, see:
+// https://github.com/regl-project/regl#standalone-script-tag
+
 var regl = createREGL(hello_world);
 
 var drawTriangle = regl({
 
   // fragment shader
   frag: `
-precision mediump float;
-uniform vec4 color;
-void main () {
-gl_FragColor = color;
-}`,
+  precision mediump float;
+  uniform vec4 color;
+  void main () {
+    gl_FragColor = color;
+  }`,
 
   // vertex shader
   vert: `
-precision mediump float;
-attribute vec2 position;
-void main () {
-gl_Position = vec4(position, 0, 1);
-}`,
+  precision mediump float;
+  attribute vec2 position;
+  void main () {
+    gl_Position = vec4(position, 0, 1);
+  }`,
 
   // attributes
   attributes: {
@@ -72,32 +66,18 @@ gl_Position = vec4(position, 0, 1);
     color: [1, 0, 0, 1]
   },
 
-  
-
   // vertex count
   count: 3
 })
 
-// regl.frame() wraps requestAnimationFrame and also handles viewport changes
-regl.frame(({time}) => {
-    // clear contents of the drawing buffer
-    regl.clear({
-      color: [0, 0, 0, 0.4],
-      depth: 1
-    })
-  
-    // draw a triangle using the command defined above
-    drawTriangle()
-  })
+drawTriangle();
+          </pre>
 
-                </pre>
-                 <div class= "preview" id="hello_world">
-                     <script src="hello_world.js"></script>
-                 </div>
-                 
-            </div>
+          <div id="hello_world">
+            <script src="hello_world.js"></script>
+          </div>
+
         </section>
-    </div> -->
 </body>
 
 </html>
