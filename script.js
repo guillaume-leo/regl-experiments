@@ -74,7 +74,8 @@ const editor = CodeMirror(document.querySelector('#editor'), {
   theme: 'dracula',
   autoCloseBrackets: true,
   matchBrackets:true,
-  mode: 'javascript'
+  mode: 'javascript',
+  scrollbarStyle: "null"
 });
 
 editor.setSize(600, 750);
